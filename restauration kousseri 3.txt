@@ -20,6 +20,9 @@ sel vol 3
 bootrec /fixboot
 bootrec /scanos
 
+bootrec /scanos
+sel vol 3
+
 
 
 
