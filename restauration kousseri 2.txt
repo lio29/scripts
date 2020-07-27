@@ -44,3 +44,5 @@ mkdir configBak
 copy config configBak
 cd backup
 copy * ..\*
+
+clearly another mistake !
