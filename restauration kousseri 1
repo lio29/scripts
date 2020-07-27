@@ -1,0 +1,13 @@
+c:
+cd : c:\windows\system32\config\
+dir
+cd regback
+dir
+cd ..
+ren default default1
+ren sam sam1
+ren security security1
+ren software software1
+ren system system1
+cd regback
+copy * c:\windows\system32\config\

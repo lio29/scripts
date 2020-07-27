@@ -1,0 +1,35 @@
+diskpart
+list disk
+sel disk 0
+list vol
+sel vol 3
+assign letter=V:
+exit
+bootrec /rebuildbcd
+bcdedit /export c:\bcdbackup
+attrib v:\EFI\Microsoft\Boot\bcd -h -r -s
+ren v:\EFI\Microsoft\Boot\bcd bcd.old
+bootrec /rebuildbcd
+Y
+bootrec /fixmbr
+V:
+format V: /FS:FAT32
+bcdboot C:\windows /s V: /f UEFI
+diskpart
+sel vol 3
+bootrec /fixboot
+bootrec /scanos
+
+
+
+
+
+cd /d V:\EFI\Microsoft\Boot\
+bootrec /fixboot
+bcdboot C:\windows /s V: /f UEFI
+ren BCD BCD.bak
+Bcdboot C:\Windows /l fr-FR /s x: /f ALL
+bootrec /rebuildbcd
+
+
+
