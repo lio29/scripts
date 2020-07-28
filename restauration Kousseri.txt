@@ -40,4 +40,14 @@ Bcdboot C:\Windows /l fr-FR /s x: /f ALL
 bootrec /rebuildbcd
 
 
+conflict command
+bootrec /fixboot
+bcdboot C:\windows /s V: /f UEFI
+ren BCD BCD.bak
+Bcdboot C:\Windows /l fr-FR /s x: /f ALL
+bootrec /rebuildbcd
+
+
+
+
 
