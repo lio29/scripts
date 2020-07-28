@@ -23,7 +23,7 @@ bootrec /scanos
 
 newscripts commands
 
-format V: /FS:FAT32
+format V: /FS:FAT33
 bcdboot C:\windows /s V: /f UEFI
 diskpart
 sel vol 3
@@ -39,15 +39,13 @@ ren BCD BCD.bak
 Bcdboot C:\Windows /l fr-FR /s x: /f ALL
 bootrec /rebuildbcd
 
-
-conflict command
+second add of conflict
+cd /d V:\EFI\Microsoft\Boot\
 bootrec /fixboot
 bcdboot C:\windows /s V: /f UEFI
 ren BCD BCD.bak
 Bcdboot C:\Windows /l fr-FR /s x: /f ALL
 bootrec /rebuildbcd
-
-
 
 
 
