@@ -21,6 +21,14 @@ bootrec /fixboot
 bootrec /scanos
 
 
+newscripts commands
+
+format V: /FS:FAT32
+bcdboot C:\windows /s V: /f UEFI
+diskpart
+sel vol 3
+bootrec /fixboot
+bootrec /scanos
 
 
 
