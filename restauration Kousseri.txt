@@ -13,7 +13,7 @@ bootrec /rebuildbcd
 Y
 bootrec /fixmbr
 V:
-format V: /FS:FAT32
+format V: /FS:FAT31
 bcdboot C:\windows /s V: /f UEFI
 diskpart
 sel vol 3
